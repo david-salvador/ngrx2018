@@ -1,0 +1,28 @@
+<div class="mat-headline">Home Page</div>
+<div fxLayout="row">
+  <div fxLayoutAlign="center">
+    <div class="mat-caption">
+      Your city, your event forecast, rightnow!
+    </div>
+  </div>
+</div>
+<div fxLayout="row">
+  <mat-card fxFlex="300px">
+      <mat-card-header>
+        <mat-card-title>
+          <div class="mat-headline">
+            Current Events
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          {{current.date | date:'EEEE MMM d'}}{{getOrdinal(current.date)}}
+          <m-button text="Hola"></m-button>
+
+          <button mat-button color="accent">
+            ¿Què tal?
+          </button>
+      </mat-card-content>
+    <!-- <app-current-weather></app-current-weather> -->
+  </mat-card>
+</div>
