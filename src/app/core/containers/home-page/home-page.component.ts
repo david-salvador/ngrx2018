@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs/operators';
+import { ICurrentWeather } from '../../models/current-weather';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,12 +12,18 @@ export class HomePageComponent implements OnInit {
 
   current: any;
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
     this.current = {
       date: new Date()
     };
+
+    this.weatherService.getCurrentWeather('Barcelona', 'ES')
+                       .pipe(
+                         tap( (data: ICurrentWeather) => console.log(JSON.stringify(data, undefined, 2)) )
+                       )
+                       .subscribe((data) => this.current = data);
 
   }
 

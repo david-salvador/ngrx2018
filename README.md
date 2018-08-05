@@ -2,12 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
-```
+```typescript
 // sync with Angular latest updates (do not use npm to upgrade npm)
-npm install --global --production npm-windows-upgrade
-npm-windows-upgrade
-npx @angular/cli new ngrx2018 --style=scss
-cd ngrx2018
+- [x] npm install --global --production npm-windows-upgrade
+- [x] npm-windows-upgrade
+- [x] npx @angular/cli new ngrx2018 --style=scss
+- [v] cd ngrx2018
 
 
 
@@ -26,15 +26,13 @@ ng g c features/admin/containers/adminPage --module features/admin/admin.module.
 ng g c features/admin/components/userDetail --module features/admin/admin.module.ts
 
 // core module
+ng g m core/core -m app.module.ts --flat --spec=false --dry-run
 ng g s core/services/weather --flat --dry-run
 
 ng g interface core/models/currentWeather --dry-run
 
 npx ng add @angular/material
 npm i hammerjs
-
-
-
 
 ```
 
@@ -75,7 +73,7 @@ Book: EnterCh5
 
 `<div class="mat-display-4">Hello, Material world!</div>`
 
-```
+```html
 Class Name    >>> Usage
 --------------------------------------
 display-4,
@@ -95,7 +93,8 @@ button        >>> Buttons and anchors
 
 two applications of typography, below...
 a)
-```
+
+```html
 <mat-card-header class="mat-typography">
   <mat-card-title><h2>Current Weather</h2></mat-card-title>
 </mat-card-header>
@@ -103,19 +102,19 @@ a)
 
 preferable the more specific and localized option, below
 b)
-```
+
+```html
 <mat-card-title><div class="mat-title">Current Weather</div></mat-cardtitle>
 ```
 You can read more about Material Typography at https://material.angular.io/guide/typography
 
-
 ## CSS Layout
-
-
 
 https://github.com/angular/flex-layout
 https://github.com/angular/flex-layout/wiki
- [ ] Stable Release by Angular 6?
+
+- [ ] Stable Release by Angular 6?
+
 Angular Flex Layout provides a sophisticated layout API using FlexBox CSS +
 mediaQuery. This module provides Angular (v4.1 and higher) developers with component
 layout features using a custom Layout API, mediaQuery observables,and injected DOM
@@ -126,5 +125,6 @@ CSS to browser view hierarchies. This automation also addresses many of the comp
 and workarounds encountered with the traditional, manual, CSS-only application of
 Flexbox CSS.
 
- [ ] CSS Grid supersedes?
+- [ ] CSS Grid supersedes?
+
 https://blog.oasisdigital.com/2017/css-grid-angular-cli-now/
