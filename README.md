@@ -46,6 +46,8 @@ npm i @ngrx/entity --save
 npm i @ngrx/store-devtools --save
 npm i @ngrx/router-store --save
 
+npm i @ngrx-store-freeze --save-dev
+
 ```
 
 ## Development server
