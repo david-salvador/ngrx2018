@@ -34,6 +34,18 @@ ng g interface core/models/currentWeather --dry-run
 npx ng add @angular/material
 npm i hammerjs
 
+
+//NgRx
+npm i @ngrx/schematics --save-dev
+a)
+npm i @ngrx/{store,effects,entity,store-devtools,router-store} --save
+b)
+npm i @ngrx/store --save
+npm i @ngrx/effects --save
+npm i @ngrx/entity --save
+npm i @ngrx/store-devtools --save
+npm i @ngrx/router-store --save
+
 ```
 
 ## Development server
