@@ -10,7 +10,7 @@ const ROUTES: Routes = [
       // { path: '',     redirectTo: '/', pathMatch: 'full'},
       // { path: 'home', component: AdminPageComponent },
       // { path: ':id',  component: UserDetailComponent },
-      { path: 'admin', loadChildren: './features/admin/admin.module#AdminModule'},
+      { path: 'admin', loadChildren: '../features/admin/admin.module#AdminModule'},
       { path: '**',   redirectTo: '', pathMatch: 'full' },
 
 

@@ -128,3 +128,7 @@ Flexbox CSS.
 - [ ] CSS Grid supersedes?
 
 https://blog.oasisdigital.com/2017/css-grid-angular-cli-now/
+
+
+## openweathermap
+- [ ] api keys at: https://home.openweathermap.org/api_keys

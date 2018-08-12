@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run standardize && ng serve",
+    "start:dapi": "npm run standardize && ng serve --proxy-config ./proxy.json",
     "build": "ng build",
     "build:dev" : "ng build --configuration=development --deploy-url . && gulp",
     "compodoc":       "./node_modules/.bin/compodoc -p src/tsconfig.app.json --theme 'material'",
