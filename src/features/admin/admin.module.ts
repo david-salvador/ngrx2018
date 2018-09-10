@@ -4,10 +4,9 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { UserOneLinerComponent } from './components/user-one-liner/user-one-liner.component';
 import { AdminPageComponent } from './containers/admin-page/admin-page.component';
 
-
 @NgModule({
   declarations: [UserDetailComponent, UserOneLinerComponent, AdminPageComponent],
-  imports:      [AdminRoutingModule],
-  providers:    []
+  imports: [AdminRoutingModule],
+  providers: []
 })
 export class AdminModule {}

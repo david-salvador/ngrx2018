@@ -8,9 +8,8 @@ describe('UserOneLinerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserOneLinerComponent ]
-    })
-    .compileComponents();
+      declarations: [UserOneLinerComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

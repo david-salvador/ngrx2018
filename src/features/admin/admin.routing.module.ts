@@ -7,10 +7,10 @@ const ROUTES: Routes = [
     path: '',
     component: AdminPageComponent,
     children: [
-      { path: '',     redirectTo: 'admin/home', pathMatch: 'full'},
+      { path: '', redirectTo: 'admin/home', pathMatch: 'full' },
       // { path: 'home', component: AdminPageComponent },
       // { path: ':id',  component: UserDetailComponent },
-      { path: '**',   redirectTo: 'admin/home', pathMatch: 'full' },
+      { path: '**', redirectTo: 'admin/home', pathMatch: 'full' }
     ]
   }
 ];

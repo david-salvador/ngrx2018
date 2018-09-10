@@ -1,4 +1,3 @@
-
 export const COURSES = {
   0: {
     id: 0,
@@ -15,7 +14,7 @@ export const COURSES = {
     description: 'ian CookingvVegeta',
     iconUrl: 'https://asdfasdfsdf.s3.amazonaws.omm/thumbnails/page-100-small-v2.png',
     courseListIcon: 'https://asdfasdfsdf.s3.amazonaws.omm/icons/page-100-logo-small-cat.png',
-    longDescription: 'vfundamentals, what\'s und',
+    longDescription: "vfundamentals, what's und",
     category: 'BEGINNER',
     lessonsCount: 10,
     promo: true

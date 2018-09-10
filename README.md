@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 // sync with Angular latest updates (do not use npm to upgrade npm)
 - [x] npm install --global --production npm-windows-upgrade
 - [x] npm-windows-upgrade
-- [x] npx @angular/cli new ngrx2018 --style=scss
+- [x] npx @angular/cli new ngrx2018 --style=scss --routing
 - [v] cd ngrx2018
 
 
@@ -49,6 +49,21 @@ npm i @ngrx/router-store --save
 npm i @ngrx-store-freeze --save-dev
 
 ```
+
+
+# Business Processes into NgRx
+
+1. Identify UX meaningful event (synch or asynch)
+2. Define Action & ContextModuleÇ(Core, Shared, Feature | module)
+3. Define State, in-memory client data tree
+4. Reducers become define-able
+5. Selectors become define-able
+6. Effects to handle asynch/side-effects: either dispatch new actions or not.
+
+
+
+
+# Technicalities
 
 ## Development server
 
@@ -142,6 +157,20 @@ Flexbox CSS.
 - [ ] CSS Grid supersedes?
 
 https://blog.oasisdigital.com/2017/css-grid-angular-cli-now/
+
+___
+
+## NgRx Process
+
+### From Page-UiState -> Actions
+
+### Actions -> [State-Changes|State]
+
+### State -> Reducers (Pure)
+
+### Selectors (Subscribers do not keep derived state)
+
+### Effects (Impure/Async/SideEffects)
 
 
 ## openweathermap

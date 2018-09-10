@@ -6,4 +6,3 @@ export interface ICurrentWeather {
   temperature: number;
   description: string;
 }
-
