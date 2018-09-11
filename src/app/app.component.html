@@ -1,23 +1,35 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-layout>
-  <app-sidenav [open]="showSidenav$ | async" (closeMenu)="closeSidenav()">
-    <app-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/" icon="book" hint="View your book collection">
-      My Collection
-    </app-nav-item>
-    <app-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/books/find" icon="search" hint="Find your next book!">
-      Browse Books
-    </app-nav-item>
-    <app-nav-item (navigate)="closeSidenav()" *ngIf="!(loggedIn$ | async)">
-      Sign In
-    </app-nav-item>
-    <app-nav-item (navigate)="logout()" *ngIf="loggedIn$ | async">
-      Sign Out
-    </app-nav-item>
-  </app-sidenav>
-  <app-toolbar (openMenu)="openSidenav()">
-    ngrx2018
-  </app-toolbar>
-  <h1>router outlet below</h1>
-  <router-outlet></router-outlet>
-  <h1>./router outlet below</h1>
-</app-layout>
+<app-toolbar (menuItemClick)="openSidenav()">
+  ngrx2018 quickStart App
+</app-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav 
+    [opened]="showSidenav$ | async"     
+    (closedStart)="closeSidenav()">
+
+    <mat-nav-list>
+      <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)" 
+        icon="book" hint="View your node collection">
+        My Collection
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('search')" *ngIf="!(loggedIn$ | async)" 
+        icon="search" hint="Find your next book!">
+        Browse Nodes
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)" 
+        icon="account_circle" hint="I miss you!">
+        Sign In
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('logout')" *ngIf="loggedIn$ | async">
+        Sign Out
+      </app-nav-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>Main
+    <p>router outlet start</p>
+    <router-outlet></router-outlet>
+    <p>./router outlet below</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

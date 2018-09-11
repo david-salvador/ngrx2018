@@ -4,7 +4,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   selector: 'app-toolbar',
   template: `
     <mat-toolbar color="primary">
-      <button mat-icon-button (click)="openMenu.emit()">
+      <button mat-icon-button (click)="this.menuIconClicked()">
         <mat-icon>menu</mat-icon>
       </button>
       <ng-content></ng-content>
@@ -13,5 +13,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ToolbarComponent {
   @Output()
-  openMenu = new EventEmitter();
+  menuItemClick: EventEmitter<any>;
+
+  constructor() {
+    this.menuItemClick = new EventEmitter();
+  }
+
+  menuIconClicked() {
+    this.menuItemClick.emit();
+  }
 }

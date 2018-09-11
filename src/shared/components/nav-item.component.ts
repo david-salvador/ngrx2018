@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-nav-item',
   template: `
-    <mat-list-item [routerLink]="this.routerLink" (click)="navigate.emit()">
+    <mat-list-item (click)="this.clicked()">
       <mat-icon mat-list-icon>{{ icon }}</mat-icon>
       <span mat-line><ng-content></ng-content></span>
       <span mat-line class="secondary">{{ hint }}</span>
@@ -25,5 +25,13 @@ export class NavItemComponent {
   @Input()
   routerLink: string | any[] = '/';
   @Output()
-  navigate = new EventEmitter();
+  itemClicked: EventEmitter<any>;
+
+  constructor() {
+    this.itemClicked = new EventEmitter<any>();
+  }
+
+  public clicked() {
+    this.itemClicked.emit();
+  }
 }

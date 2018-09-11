@@ -39,7 +39,7 @@ export const reducers: ActionReducerMap<AppState> = {
 
 // console.log all actions
 export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
-  return function (state: AppState, action: any): AppState {
+  return function(state: AppState, action: any): AppState {
     console.log('state', state);
     console.log('action', action);
 
@@ -68,7 +68,7 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [
  * createFeatureSelector allows us to get a top-level feature state property of the state
  * tree simply by calling it out by its feature name.
  * Returns a typed selector function that will return a reference to that specific slice of state.
- * 
+ *
  */
 
 export const getLayoutState = createFeatureSelector<AppState, fromLayout.State>('layout');

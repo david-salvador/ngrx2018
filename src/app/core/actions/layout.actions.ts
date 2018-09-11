@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
 
-
 // ORIGIN: page state the user is seeing, or api, process origin of the action
 // EVENT: ux story meaningful event
 // ACTION_[ORIGIN]_EVENT

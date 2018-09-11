@@ -49,7 +49,8 @@ npm i @ngrx/router-store --save
 npm i @ngrx-store-freeze --save-dev
 
 ```
-
+# References
+`https://github.com/ngrx/router-store`
 
 # Business Processes into NgRx
 

@@ -1,21 +1,21 @@
 import { Action } from '@ngrx/store';
 
 export enum AuthActionTypes {
-  Logout = '[Auth] Logout',
-  LogoutConfirmation = '[Auth] Logout Confirmation',
-  LogoutConfirmationDismiss = '[Auth] Logout Confirmation Dismiss'
+  LOGOUT = '[Auth] Logout',
+  LOGOUT_CONFIRMATION = '[Auth] Logout Confirmation',
+  LOGOUT_CONFIRMATION_DISMISS = '[Auth] Logout Confirmation Dismiss'
 }
 
 export class Logout implements Action {
-  readonly type = AuthActionTypes.Logout;
+  readonly type = AuthActionTypes.LOGOUT;
 }
 
 export class LogoutConfirmation implements Action {
-  readonly type = AuthActionTypes.LogoutConfirmation;
+  readonly type = AuthActionTypes.LOGOUT_CONFIRMATION;
 }
 
 export class LogoutConfirmationDismiss implements Action {
-  readonly type = AuthActionTypes.LogoutConfirmationDismiss;
+  readonly type = AuthActionTypes.LOGOUT_CONFIRMATION_DISMISS;
 }
 
 // the export below will help us writing our reducers later one
