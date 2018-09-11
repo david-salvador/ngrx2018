@@ -8,6 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
 import { SharedModule } from '../../shared/shared.module';
 import { HomePageComponent } from './containers/home-page/home-page.component';
+import { NotFoundPageComponent } from './containers/not-found-page/not-found-page.component';
 import { metaReducers, reducers } from './reducers';
 import { CustomRouterStateSerializer } from './reducers/router.serializer';
 
@@ -58,7 +59,7 @@ import { CustomRouterStateSerializer } from './reducers/router.serializer';
     EffectsModule.forRoot([])
   ],
   exports: [HttpClientModule],
-  declarations: [HomePageComponent],
+  declarations: [HomePageComponent, NotFoundPageComponent],
   providers: [{ provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }]
 })
 export class CoreModule {}

@@ -16,6 +16,11 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@ds-app/*": ["./src/app/*"],
+      "@ds-features/*": ["./src/features/*"],
+      "@ds-shared/*": ["./src/shared/*"]
+    }
   }
 }

@@ -9,7 +9,7 @@ import { AppState } from '../../../../app/core/reducers';
 // import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   // login() {
   //   const val = this.form.value;

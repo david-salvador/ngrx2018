@@ -39,7 +39,7 @@ export const reducers: ActionReducerMap<AppState> = {
 
 // console.log all actions
 export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
-  return function(state: AppState, action: any): AppState {
+  return function (state: AppState, action: any): AppState {
     console.log('state', state);
     console.log('action', action);
 
@@ -55,8 +55,22 @@ export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState
 export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [logger, storeFreeze] : [];
 
 /**
- * Layout Reducers
+ * Selectors
+ *
+ * Selectors provide memoization: only emits, state-branches, if relevant/value change.
+ * *createSelector* returns a pure function that remembers prev calculations. The last
+ * argument of the selector call is not a selector, ia a projector function. The projector
+ * takes the o/p of prev selector. It called with same arguments it does not recalculate,
+ * fetches the result of calc from memroy and passes w/o executing any fo the selector or projector fon.
+ *
+ * https://toddmotto.com/ngrx-store-understanding-state-selectors#feature-state-selectors
+ *
+ * createFeatureSelector allows us to get a top-level feature state property of the state
+ * tree simply by calling it out by its feature name.
+ * Returns a typed selector function that will return a reference to that specific slice of state.
+ * 
  */
+
 export const getLayoutState = createFeatureSelector<AppState, fromLayout.State>('layout');
 
 export const getShowSidenav = createSelector(getLayoutState, fromLayout.getShowSidenav);

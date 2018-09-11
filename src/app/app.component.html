@@ -1,10 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
-  <span>ngrx2018</span>
-</mat-toolbar>
-<div class="margin-8px">
-
+<app-layout>
+  <app-sidenav [open]="showSidenav$ | async" (closeMenu)="closeSidenav()">
+    <app-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/" icon="book" hint="View your book collection">
+      My Collection
+    </app-nav-item>
+    <app-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/books/find" icon="search" hint="Find your next book!">
+      Browse Books
+    </app-nav-item>
+    <app-nav-item (navigate)="closeSidenav()" *ngIf="!(loggedIn$ | async)">
+      Sign In
+    </app-nav-item>
+    <app-nav-item (navigate)="logout()" *ngIf="loggedIn$ | async">
+      Sign Out
+    </app-nav-item>
+  </app-sidenav>
+  <app-toolbar (openMenu)="openSidenav()">
+    ngrx2018
+  </app-toolbar>
   <h1>router outlet below</h1>
   <router-outlet></router-outlet>
   <h1>./router outlet below</h1>
-</div>
+</app-layout>

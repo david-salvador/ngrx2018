@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './core/containers/home-page/home-page.component';
+import { NotFoundPageComponent } from './core/containers/not-found-page/not-found-page.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomePageComponent },
@@ -8,7 +9,8 @@ const ROUTES: Routes = [
   // { path: 'home', component: AdminPageComponent },
   // { path: ':id',  component: UserDetailComponent },
   { path: 'admin', loadChildren: '../features/admin/admin.module#AdminModule' },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', component: NotFoundPageComponent }
+  // { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

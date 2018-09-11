@@ -10,12 +10,12 @@ const initialState: State = {
 
 export function reducer(state: State = initialState, action: LayoutActions.LayoutActionsUnion): State {
   switch (action.type) {
-    case LayoutActions.LayoutActionTypes.CloseSidenav:
+    case LayoutActions.LayoutActionTypes.CLOSE_SIDENAV:
       return {
         showSidenav: false
       };
 
-    case LayoutActions.LayoutActionTypes.OpenSidenav:
+    case LayoutActions.LayoutActionTypes.OPEN_SIDENAV:
       return {
         showSidenav: true
       };

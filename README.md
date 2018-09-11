@@ -55,10 +55,12 @@ npm i @ngrx-store-freeze --save-dev
 
 1. Identify UX meaningful event (synch or asynch)
 2. Define Action & ContextModuleÇ(Core, Shared, Feature | module)
-3. Define State, in-memory client data tree
-4. Reducers become define-able
-5. Selectors become define-able
-6. Effects to handle asynch/side-effects: either dispatch new actions or not.
+3. Define State structure, in-memory client data tree
+4. Define initial state, for each reducer/branch_state
+5. Reducers become define-able.
+6. Selectors become define-able. 
+7. Effects to handle asynch/side-effects: either dispatch new actions or not.
+8. on-push change detection on UI components which are by now stateless.
 
 
 
@@ -140,6 +142,7 @@ You can read more about Material Typography at https://material.angular.io/guide
 ## CSS Layout
 
 https://github.com/angular/flex-layout
+
 https://github.com/angular/flex-layout/wiki
 
 - [ ] Stable Release by Angular 6?
