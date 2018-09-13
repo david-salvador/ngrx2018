@@ -5,7 +5,8 @@ import { Action } from '@ngrx/store';
 // ACTION_[ORIGIN]_EVENT
 export enum LayoutActionTypes {
   OPEN_SIDENAV = '[APP_LAYOUT] Open Sidenav',
-  CLOSE_SIDENAV = '[APP_LAYOUT] Close Sidenav'
+  CLOSE_SIDENAV = '[APP_LAYOUT] Close Sidenav',
+  TOGGLE_SIDENAV = '[APP_LAYOUT] Toggle Sidenav'
 }
 
 export class OpenSidenav implements Action {
@@ -16,5 +17,9 @@ export class CloseSidenav implements Action {
   readonly type = LayoutActionTypes.CLOSE_SIDENAV;
 }
 
+export class ToggleSidenav implements Action {
+  readonly type = LayoutActionTypes.TOGGLE_SIDENAV;
+}
+
 // the export below will help us writing our reducers later one
-export type LayoutActionsUnion = OpenSidenav | CloseSidenav;
+export type LayoutActionsUnion = OpenSidenav | CloseSidenav | ToggleSidenav;

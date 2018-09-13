@@ -1,11 +1,44 @@
-<app-toolbar (menuItemClick)="openSidenav()">
-  ngrx2018 quickStart App
-</app-toolbar>
+<!-- (closedStart)="closeSidenav()"   class="example-container"-->
 
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [opened]="showSidenav$ | async" disableClose>
+
+    <mat-nav-list>
+      <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)" icon="book"
+        hint="View your node collection">
+        My Collection
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('search')" *ngIf="!(loggedIn$ | async)" icon="search"
+        hint="Find your next book!">
+        Browse Nodes
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)" icon="account_circle"
+        hint="I miss you!">
+        Sign In
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('logout')" *ngIf="loggedIn$ | async">
+        Sign Out
+      </app-nav-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-toolbar (menuItemClick)="openSidenav()">
+      ngrx2018 quickStart App
+    </app-toolbar>
+    Main
+    <p>router outlet start</p>
+    <router-outlet></router-outlet>
+    <p>./router outlet below</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav 
     [opened]="showSidenav$ | async"     
-    (closedStart)="closeSidenav()">
+    (closedStart)="closeSidenav()"
+    disabled>
 
     <mat-nav-list>
       <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)" 
@@ -27,9 +60,13 @@
 
   </mat-sidenav>
 
-  <mat-sidenav-content>Main
+  <mat-sidenav-content>
+      <app-toolbar (menuItemClick)="openSidenav()">
+          ngrx2018 quickStart App
+        </app-toolbar>
+    Main
     <p>router outlet start</p>
     <router-outlet></router-outlet>
     <p>./router outlet below</p>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->

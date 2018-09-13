@@ -65,6 +65,10 @@ export class AppComponent {
     this.store.dispatch(new LayoutActions.OpenSidenav());
   }
 
+  toggleSidenav() {
+    this.store.dispatch(new LayoutActions.ToggleSidenav());
+  }
+
   logout() {
     this.closeSidenav();
 

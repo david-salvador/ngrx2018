@@ -20,6 +20,11 @@ export function reducer(state: State = initialState, action: LayoutActions.Layou
         showSidenav: true
       };
 
+    case LayoutActions.LayoutActionTypes.TOGGLE_SIDENAV:
+      return {
+        showSidenav: !state.showSidenav
+      };
+
     default:
       return state;
   }
