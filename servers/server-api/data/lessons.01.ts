@@ -1,7 +1,8 @@
 export const LESSONS = {
   1: {
     id: 1,
-    description: 'Vegan Tutorial For Beginners - Build Your First App - Hello World Step By Step',
+    description:
+      'Vegan Tutorial For Beginners - Build Your First App - Hello World Step By Step',
     duration: '4:17',
     seqNo: 1,
     courseId: 1
@@ -57,14 +58,16 @@ export const LESSONS = {
   },
   9: {
     id: 9,
-    description: ' Components Tutorial For Beginners - Components Exercise Solution Inside',
+    description:
+      ' Components Tutorial For Beginners - Components Exercise Solution Inside',
     duration: '2:08',
     seqNo: 9,
     courseId: 1
   },
   10: {
     id: 10,
-    description: ' Directives - Inputs, Output Event Emitters and How To Export Template References',
+    description:
+      ' Directives - Inputs, Output Event Emitters and How To Export Template References',
     duration: '4:01',
     seqNo: 10,
     courseId: 1
@@ -147,7 +150,8 @@ export const LESSONS = {
   },
   21: {
     id: 21,
-    description: 'Some Interesting Properties Of Hashing Functions - Validating Passwords',
+    description:
+      'Some Interesting Properties Of Hashing Functions - Validating Passwords',
     duration: '06:31',
     seqNo: 11,
     courseId: 2
@@ -157,7 +161,8 @@ export const LESSONS = {
 
   22: {
     id: 22,
-    description: 'Course Kick-Off - Install Node, NPM, IDE And Service Workers Section Code',
+    description:
+      'Course Kick-Off - Install Node, NPM, IDE And Service Workers Section Code',
     duration: '07:19',
     seqNo: 1,
     courseId: 3
@@ -171,14 +176,16 @@ export const LESSONS = {
   },
   24: {
     id: 24,
-    description: 'Service Workers Hello World - Lifecycle Part 1 and PWA Chrome Dev Tools',
+    description:
+      'Service Workers Hello World - Lifecycle Part 1 and PWA Chrome Dev Tools',
     duration: '7:28',
     seqNo: 3,
     courseId: 3
   },
   25: {
     id: 25,
-    description: 'Service Workers and Application Versioning - Install & Activate Lifecycle Phases',
+    description:
+      'Service Workers and Application Versioning - Install & Activate Lifecycle Phases',
     duration: '10:17',
     seqNo: 4,
     courseId: 3

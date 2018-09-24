@@ -8,8 +8,10 @@ import { LayoutComponent } from './components/layout.component';
 import { NavItemComponent } from './components/nav-item.component';
 import { RouterModule } from '@angular/router';
 import { ToolbarComponent } from './components/toolbar.component';
+// import { MIframeModule } from './components';
 
 export const SHARED = [FlexLayoutModule, MaterialModule, MButtonModule];
+// export const SHARED = [FlexLayoutModule, MaterialModule, MButtonModule, MIframeModule];
 // export const SHARED_COMPONENTS = [LayoutComponent, SidenavComponent, NavItemComponent, ToolbarComponent];
 export const SHARED_COMPONENTS = [LayoutComponent, NavItemComponent, ToolbarComponent];
 @NgModule({

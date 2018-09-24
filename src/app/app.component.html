@@ -1,20 +1,27 @@
 <!-- (closedStart)="closeSidenav()"   class="example-container"-->
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav [opened]="showSidenav$ | async" disableClose>
+<app-toolbar (menuItemClick)="toggleSidenav()">
+  ngrx2018 quickStart App
+</app-toolbar>
+<mat-sidenav-container (backdropClick)="this.closeSidenav()">
+  <mat-sidenav #sidenav [opened]="showSidenav$ | async" disableClose (keydown.escape)="this.closeSidenav()">
 
     <mat-nav-list>
-      <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)" icon="book"
-        hint="View your node collection">
+      <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)"
+        icon="book" hint="View your node collection">
         My Collection
       </app-nav-item>
-      <app-nav-item (itemClicked)="navItemClicked('search')" *ngIf="!(loggedIn$ | async)" icon="search"
-        hint="Find your next book!">
+      <app-nav-item (itemClicked)="navItemClicked('search')" *ngIf="!(loggedIn$ | async)"
+        icon="search" hint="Find your next book!">
         Browse Nodes
       </app-nav-item>
-      <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)" icon="account_circle"
-        hint="I miss you!">
+      <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)"
+        icon="account_circle" hint="I miss you!">
         Sign In
+      </app-nav-item>
+      <app-nav-item (itemClicked)="navItemClicked('signup')" *ngIf="!(loggedIn$ | async)"
+        icon="account_circle" hint="I miss you!">
+        Sign Up
       </app-nav-item>
       <app-nav-item (itemClicked)="navItemClicked('logout')" *ngIf="loggedIn$ | async">
         Sign Out
@@ -24,32 +31,30 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-toolbar (menuItemClick)="openSidenav()">
-      ngrx2018 quickStart App
-    </app-toolbar>
-    Main
-    <p>router outlet start</p>
+
+    <!-- Main
+    <p>router outlet start</p> -->
     <router-outlet></router-outlet>
-    <p>./router outlet below</p>
+    <!-- <p>./router outlet below</p> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <!-- <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav 
-    [opened]="showSidenav$ | async"     
+  <mat-sidenav #sidenav
+    [opened]="showSidenav$ | async"
     (closedStart)="closeSidenav()"
     disabled>
 
     <mat-nav-list>
-      <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)" 
+      <app-nav-item (itemClicked)="navItemClicked('home')" *ngIf="!(loggedIn$ | async)"
         icon="book" hint="View your node collection">
         My Collection
       </app-nav-item>
-      <app-nav-item (itemClicked)="navItemClicked('search')" *ngIf="!(loggedIn$ | async)" 
+      <app-nav-item (itemClicked)="navItemClicked('search')" *ngIf="!(loggedIn$ | async)"
         icon="search" hint="Find your next book!">
         Browse Nodes
       </app-nav-item>
-      <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)" 
+      <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)"
         icon="account_circle" hint="I miss you!">
         Sign In
       </app-nav-item>

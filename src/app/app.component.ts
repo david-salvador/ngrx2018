@@ -19,7 +19,7 @@ export class AppComponent {
   showSidenav$: Observable<boolean>;
   loggedIn$: Observable<boolean>;
 
-  constructor(private store: Store<fromCore.State>, private router: Router) {
+  constructor (private store: Store<fromCore.State>, private router: Router) {
     // constructor() {
     /**
      * Selectors can be applied with the `select` operator which passes the state
@@ -51,6 +51,9 @@ export class AppComponent {
         break;
       case 'signin':
         this.router.navigate(['/signin']);
+        break;
+      case 'signup':
+        this.router.navigate(['/signup']);
         break;
       case 'logout':
         this.router.navigate(['/logout']);

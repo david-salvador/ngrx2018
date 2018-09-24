@@ -11,7 +11,8 @@ export interface State {
   router: RouterReducerState<RouterStateUrl>;
 }
 
-export class CustomRouterStateSerializer implements RouterStateSerializer<RouterStateUrl> {
+export class CustomRouterStateSerializer
+  implements RouterStateSerializer<RouterStateUrl> {
   serialize(routerState: RouterStateSnapshot): RouterStateUrl {
     let route = routerState.root;
 

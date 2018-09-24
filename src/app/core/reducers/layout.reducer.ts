@@ -8,7 +8,10 @@ const initialState: State = {
   showSidenav: false
 };
 
-export function reducer(state: State = initialState, action: LayoutActions.LayoutActionsUnion): State {
+export function reducer(
+  state: State = initialState,
+  action: LayoutActions.LayoutActionsUnion
+): State {
   switch (action.type) {
     case LayoutActions.LayoutActionTypes.CLOSE_SIDENAV:
       return {

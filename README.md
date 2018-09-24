@@ -11,7 +11,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 
-ng g c core/containers/HomePage --module app.module.ts
+npx ng g c core/containers/HomePage --module core.module.ts
+npx ng g c core/containers/Signup --module core.module.ts --spec=false --dry-run
 ng g m AppRouting --flat -m app.module.ts --spec=false --dry-run ??
 
 // shared module
@@ -59,7 +60,7 @@ npm i @ngrx-store-freeze --save-dev
 3. Define State structure, in-memory client data tree
 4. Define initial state, for each reducer/branch_state
 5. Reducers become define-able.
-6. Selectors become define-able. 
+6. Selectors become define-able.
 7. Effects to handle asynch/side-effects: either dispatch new actions or not.
 8. on-push change detection on UI components which are by now stateless.
 
@@ -149,14 +150,9 @@ https://github.com/angular/flex-layout/wiki
 - [ ] Stable Release by Angular 6?
 
 Angular Flex Layout provides a sophisticated layout API using FlexBox CSS +
-mediaQuery. This module provides Angular (v4.1 and higher) developers with component
-layout features using a custom Layout API, mediaQuery observables,and injected DOM
-flexbox-2016 css stylings.
+mediaQuery. This module provides Angular (v4.1 and higher) developers with component layout features using a custom Layout API, mediaQuery observables,and injected DOM flexbox-2016 css stylings.
 
-The Layout engine intelligently automates the process of applying appropriate FlexBox
-CSS to browser view hierarchies. This automation also addresses many of the complexities
-and workarounds encountered with the traditional, manual, CSS-only application of
-Flexbox CSS.
+The Layout engine intelligently automates the process of applying appropriate FlexBox CSS to browser view hierarchies. This automation also addresses many of the complexities and workarounds encountered with the traditional, manual, CSS-only application of Flexbox CSS.
 
 - [ ] CSS Grid supersedes?
 

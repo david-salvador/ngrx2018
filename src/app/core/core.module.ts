@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { FormsModule } from '@angular/forms';
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -11,10 +12,16 @@ import { HomePageComponent } from './containers/home-page/home-page.component';
 import { NotFoundPageComponent } from './containers/not-found-page/not-found-page.component';
 import { metaReducers, reducers } from './reducers';
 import { CustomRouterStateSerializer } from './reducers/router.serializer';
+import { SignupComponent } from './containers/signup/signup.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    /**
+     * With FormsModule, Angular will detect our forms and create an object representation
+     * of it, behind the scenes.
+     */
+    FormsModule,
     HttpClientModule,
     SharedModule,
 
@@ -44,9 +51,9 @@ import { CustomRouterStateSerializer } from './reducers/router.serializer';
      */
     !environment.production
       ? StoreDevtoolsModule.instrument({
-          name: 'NgRx 2018 App',
-          logOnly: environment.production
-        })
+        name: 'NgRx 2018 App',
+        logOnly: environment.production
+      })
       : [],
 
     /**
@@ -59,7 +66,7 @@ import { CustomRouterStateSerializer } from './reducers/router.serializer';
     EffectsModule.forRoot([])
   ],
   exports: [HttpClientModule],
-  declarations: [HomePageComponent, NotFoundPageComponent],
+  declarations: [HomePageComponent, SignupComponent, NotFoundPageComponent],
   providers: [{ provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }]
 })
-export class CoreModule {}
+export class CoreModule { }

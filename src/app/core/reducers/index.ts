@@ -1,4 +1,10 @@
-import { ActionReducerMap, createSelector, createFeatureSelector, ActionReducer, MetaReducer } from '@ngrx/store';
+import {
+  ActionReducerMap,
+  createSelector,
+  createFeatureSelector,
+  ActionReducer,
+  MetaReducer
+} from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import * as fromRouter from '@ngrx/router-store';
 
@@ -52,7 +58,9 @@ export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState
  * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers
  * that will be composed to form the root meta-reducer.
  */
-export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [logger, storeFreeze] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production
+  ? [logger, storeFreeze]
+  : [];
 
 /**
  * Selectors
