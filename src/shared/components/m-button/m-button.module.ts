@@ -7,5 +7,4 @@ import { MButtonComponent } from './m-button.component';
   imports: [MatButtonModule],
   exports: [MButtonComponent]
 })
-export class MButtonModule { }
-
+export class MButtonModule {}

@@ -1,17 +1,37 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import {
+  MatSidenavModule,
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatDialogModule
+} from '@angular/material';
 import 'hammerjs';
 
 export const MAT_MODULES = [
-  MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule
+  MatSidenavModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatDialogModule
 ];
 
 @NgModule({
-  imports: [
-    ...MAT_MODULES
-  ],
-  exports: [
-    ...MAT_MODULES
-  ]
+  imports: [...MAT_MODULES],
+  exports: [...MAT_MODULES]
 })
-export class MaterialModule { }
+export class MaterialModule {}

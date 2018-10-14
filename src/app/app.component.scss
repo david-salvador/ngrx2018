@@ -1,0 +1,29 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-sidenav-container{
+   flex: 1;
+}
+
+
+.toolbar__navigation-items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &ul,li,a{
+        color:white;
+        text-decoration:none;
+    }
+    &ul,li,a:hover,
+    &ul,li,a:active{
+        color: lightgray;
+    }
+}
+
+mat-sidenav {
+   // width: 250px;
+}

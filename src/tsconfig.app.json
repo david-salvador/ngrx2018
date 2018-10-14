@@ -2,7 +2,13 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@ds-app/*": ["./src/app/*"],
+      "@ds-features/*": ["./src/features/*"],
+      "@ds-shared/*": ["./src/shared/*"]
+    }
+    
   },
   "exclude": [
     "src/test.ts",

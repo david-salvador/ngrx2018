@@ -4,8 +4,20 @@
 
 export const environment = {
   production: false,
-  appId: 'c46c3cec16cf7ded7407d963e51f1df5',
   baseUrl: 'http://',
+  dev: {
+    in_test: false
+  },
+  thirdParties: {
+    weatherAppId: 'c46c3cec16cf7ded7407d963e51f1df5',
+    googleMapsId: 'aaa',
+    facebookAppId: 'bbb'
+  },
+  social: {
+    facebook: 'mg',
+    twitter: 'mg'
+  }
+  // version: require('../../package.json').version
 };
 
 /*

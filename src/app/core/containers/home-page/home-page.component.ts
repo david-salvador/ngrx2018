@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { tap } from 'rxjs/operators';
 import { ICurrentWeather } from '../../models/current-weather';
+import { AppState } from '../../reducers';
 import { WeatherService } from '../../services/weather.service';
 
 @Component({
@@ -9,22 +11,21 @@ import { WeatherService } from '../../services/weather.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
   current: any;
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private store: Store<AppState>, private weatherService: WeatherService) {}
 
   ngOnInit() {
     this.current = {
       date: new Date()
     };
 
-    this.weatherService.getCurrentWeather('Barcelona', 'ES')
-                       .pipe(
-                         tap( (data: ICurrentWeather) => console.log(JSON.stringify(data, undefined, 2)) )
-                       )
-                       .subscribe((data) => this.current = data);
-
+    this.weatherService
+      .getCurrentWeather('Barcelona', 'ES')
+      .pipe(
+        tap((data: ICurrentWeather) => console.log(JSON.stringify(data, undefined, 2)))
+      )
+      .subscribe(data => (this.current = data));
   }
 
   getOrdinal(date: number) {
@@ -33,7 +34,7 @@ export class HomePageComponent implements OnInit {
     let index: number;
     const suffixes = ['th', 'st', 'nd', 'rd'];
     let returnValue: string;
-    if ( n > 0 ) {
+    if (n > 0) {
       if (n > 3) {
         index = 0;
       } else {
@@ -46,4 +47,7 @@ export class HomePageComponent implements OnInit {
     return returnValue;
   }
 
+  upMessageReceived(e: any) {
+    console.log(JSON.stringify(e, undefined, 2));
+  }
 }

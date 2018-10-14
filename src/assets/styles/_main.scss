@@ -1,0 +1,43 @@
+// Globals
+
+// @import 'global/reset';
+// @import 'global/variables';
+// @import 'global/mixins';
+@import 'global/fonts';
+// @import 'global/typography';
+// @import 'global/colors';
+
+
+// @import 'atoms/button';
+// @import 'atoms/img';
+// @import 'atoms/icon';
+
+// @import 'molecules/avatar';
+
+// @import 'organisms/side-nav';
+
+
+// https://css-tricks.com/abem-useful-adaptation-bem/
+// http://bradfrost.com/blog/post/atomic-web-design/
+// https://medium.com/@masacarvalho/atomic-design-system-with-abem-naming-convention-part-1-983d7d6ec3d7
+
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'mi-material-theme';
+
+
+
+  body {
+    margin: 0;
+  }
+
+  .margin-8px {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+
+  html, body {
+    @extend %font-family-italic;
+    // font-family: 'Roboto', sans-serif;
+    height: 100%;
+  }

@@ -1,17 +1,30 @@
 # Ngrx2018  :blue_book:
 
+## Table of Contents
+
+1. [Schematics](#schematics)
+  - [Log of Commands](#log-of-commands)
+2. [Ngrx](#ngrx)
+  - []
+3. [Material](#material)
+
+
+## Schematics
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
+### Log of Commands
 ```typescript
 // sync with Angular latest updates (do not use npm to upgrade npm)
 - [x] npm install --global --production npm-windows-upgrade
 - [x] npm-windows-upgrade
-- [x] npx @angular/cli new ngrx2018 --style=scss
+- [x] npx @angular/cli new ngrx2018 --style=scss --routing
 - [v] cd ngrx2018
 
 
 
-ng g c core/containers/HomePage --module app.module.ts
+npx ng g c core/containers/HomePage --module core.module.ts
+npx ng g c core/containers/Signup --module core.module.ts --spec=false --dry-run
 ng g m AppRouting --flat -m app.module.ts --spec=false --dry-run ??
 
 // shared module
@@ -34,7 +47,39 @@ ng g interface core/models/currentWeather --dry-run
 npx ng add @angular/material
 npm i hammerjs
 
+
+//NgRx
+npm i @ngrx/schematics --save-dev
+a)
+npm i @ngrx/{store,effects,entity,store-devtools,router-store} --save
+b)
+npm i @ngrx/store --save
+npm i @ngrx/effects --save
+npm i @ngrx/entity --save
+npm i @ngrx/store-devtools --save
+npm i @ngrx/router-store --save
+
+npm i @ngrx-store-freeze --save-dev
+
 ```
+# References
+`https://github.com/ngrx/router-store`
+
+# Business Processes into NgRx
+
+1. Identify UX meaningful event (synch or asynch)
+2. Define Action & ContextModuleÇ(Core, Shared, Feature | module)
+3. Define State structure, in-memory client data tree
+4. Define initial state, for each reducer/branch_state
+5. Reducers become define-able.
+6. Selectors become define-able.
+7. Effects to handle asynch/side-effects: either dispatch new actions or not.
+8. on-push change detection on UI components which are by now stateless.
+
+
+
+
+# Technicalities
 
 ## Development server
 
@@ -96,7 +141,9 @@ a)
 
 ```html
 <mat-card-header class="mat-typography">
-  <mat-card-title><h2>Current Weather</h2></mat-card-title>
+  <mat-card-title>
+    <h2>Current Weather</h2>
+  </mat-card-title>
 </mat-card-header>
 ```
 
@@ -104,31 +151,57 @@ preferable the more specific and localized option, below
 b)
 
 ```html
-<mat-card-title><div class="mat-title">Current Weather</div></mat-cardtitle>
+<mat-card-title>
+  <div class="mat-title">Current Weather</div>
+</mat-cardtitle>
 ```
 You can read more about Material Typography at https://material.angular.io/guide/typography
+
+### Customizing Material Themes
+There are 5 main colors to define.
+1. Primary Palette: most used color across the app
+2. Accent Palette: color of interactive elements
+3. Warn Palette: draws attention to warnings
+4. Foreground Palette: General content, text, icons
+5. Background Palette: For backgrounds of elements
+
+
+
 
 ## CSS Layout
 
 https://github.com/angular/flex-layout
+
 https://github.com/angular/flex-layout/wiki
 
 - [ ] Stable Release by Angular 6?
 
 Angular Flex Layout provides a sophisticated layout API using FlexBox CSS +
-mediaQuery. This module provides Angular (v4.1 and higher) developers with component
-layout features using a custom Layout API, mediaQuery observables,and injected DOM
-flexbox-2016 css stylings.
+mediaQuery. This module provides Angular (v4.1 and higher) developers with component layout features using a custom Layout API, mediaQuery observables,and injected DOM flexbox-2016 css stylings.
 
-The Layout engine intelligently automates the process of applying appropriate FlexBox
-CSS to browser view hierarchies. This automation also addresses many of the complexities
-and workarounds encountered with the traditional, manual, CSS-only application of
-Flexbox CSS.
+The Layout engine intelligently automates the process of applying appropriate FlexBox CSS to browser view hierarchies. This automation also addresses many of the complexities and workarounds encountered with the traditional, manual, CSS-only application of Flexbox CSS.
 
 - [ ] CSS Grid supersedes?
 
 https://blog.oasisdigital.com/2017/css-grid-angular-cli-now/
 
+___
+
+## NgRx Process
+
+### From Page-UiState -> Actions
+
+### Actions -> [State-Changes|State]
+
+### State -> Reducers (Pure)
+
+### Selectors (Subscribers do not keep derived state)
+
+### Effects (Impure/Async/SideEffects)
+
 
 ## openweathermap
 - [ ] api keys at: https://home.openweathermap.org/api_keys
+
+
+/*[👆 back to top](#toc)**

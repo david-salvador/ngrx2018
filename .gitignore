@@ -41,7 +41,8 @@ Thumbs.db
 
 # me
 /me
+/zzz
 
 # environments
 /src/environments
-
+/src/styles

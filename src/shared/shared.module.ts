@@ -3,22 +3,20 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MButtonModule } from './components';
 import { MaterialModule } from './material/material.module';
+import { LayoutComponent } from './components/layout.component';
+// import { SidenavComponent } from './components/sidenav.component';
+import { NavItemComponent } from './components/nav-item.component';
+import { RouterModule } from '@angular/router';
+import { ToolbarComponent } from './components/toolbar.component';
+// import { MIframeModule } from './components';
 
-
-export const SHARED = [
-  FlexLayoutModule,
-  MaterialModule,
-  MButtonModule
-];
-
+export const SHARED = [FlexLayoutModule, MaterialModule, MButtonModule];
+// export const SHARED = [FlexLayoutModule, MaterialModule, MButtonModule, MIframeModule];
+// export const SHARED_COMPONENTS = [LayoutComponent, SidenavComponent, NavItemComponent, ToolbarComponent];
+export const SHARED_COMPONENTS = [LayoutComponent, NavItemComponent, ToolbarComponent];
 @NgModule({
-  imports: [
-    CommonModule,
-    ...SHARED
-  ],
-  exports: [
-    CommonModule,
-    ...SHARED
-  ]
+  declarations: SHARED_COMPONENTS,
+  imports: [CommonModule, RouterModule, ...SHARED],
+  exports: [CommonModule, RouterModule, ...SHARED, ...SHARED_COMPONENTS]
 })
-export class SharedModule { }
+export class SharedModule {}
