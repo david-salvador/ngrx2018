@@ -19,7 +19,7 @@ export class AppComponent {
   showSidenav$: Observable<boolean>;
   loggedIn$: Observable<boolean>;
 
-  constructor (private store: Store<fromCore.State>, private router: Router) {
+  constructor(private store: Store<fromCore.State>, private router: Router) {
     // constructor() {
     /**
      * Selectors can be applied with the `select` operator which passes the state

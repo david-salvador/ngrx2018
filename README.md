@@ -1,7 +1,19 @@
 # Ngrx2018  :blue_book:
 
+## Table of Contents
+
+1. [Schematics](#schematics)
+  - [Log of Commands](#log-of-commands)
+2. [Ngrx](#ngrx)
+  - []
+3. [Material](#material)
+
+
+## Schematics
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
+### Log of Commands
 ```typescript
 // sync with Angular latest updates (do not use npm to upgrade npm)
 - [x] npm install --global --production npm-windows-upgrade
@@ -129,7 +141,9 @@ a)
 
 ```html
 <mat-card-header class="mat-typography">
-  <mat-card-title><h2>Current Weather</h2></mat-card-title>
+  <mat-card-title>
+    <h2>Current Weather</h2>
+  </mat-card-title>
 </mat-card-header>
 ```
 
@@ -137,9 +151,22 @@ preferable the more specific and localized option, below
 b)
 
 ```html
-<mat-card-title><div class="mat-title">Current Weather</div></mat-cardtitle>
+<mat-card-title>
+  <div class="mat-title">Current Weather</div>
+</mat-cardtitle>
 ```
 You can read more about Material Typography at https://material.angular.io/guide/typography
+
+### Customizing Material Themes
+There are 5 main colors to define.
+1. Primary Palette: most used color across the app
+2. Accent Palette: color of interactive elements
+3. Warn Palette: draws attention to warnings
+4. Foreground Palette: General content, text, icons
+5. Background Palette: For backgrounds of elements
+
+
+
 
 ## CSS Layout
 
@@ -175,3 +202,6 @@ ___
 
 ## openweathermap
 - [ ] api keys at: https://home.openweathermap.org/api_keys
+
+
+/*[👆 back to top](#toc)**

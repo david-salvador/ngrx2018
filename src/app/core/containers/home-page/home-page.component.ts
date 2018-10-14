@@ -5,7 +5,6 @@ import { ICurrentWeather } from '../../models/current-weather';
 import { AppState } from '../../reducers';
 import { WeatherService } from '../../services/weather.service';
 
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -14,8 +13,7 @@ import { WeatherService } from '../../services/weather.service';
 export class HomePageComponent implements OnInit {
   current: any;
 
-
-  constructor (private store: Store<AppState>, private weatherService: WeatherService) { }
+  constructor(private store: Store<AppState>, private weatherService: WeatherService) {}
 
   ngOnInit() {
     this.current = {
@@ -28,10 +26,7 @@ export class HomePageComponent implements OnInit {
         tap((data: ICurrentWeather) => console.log(JSON.stringify(data, undefined, 2)))
       )
       .subscribe(data => (this.current = data));
-
-
   }
-
 
   getOrdinal(date: number) {
     const n = new Date(date).getDate();
@@ -55,6 +50,4 @@ export class HomePageComponent implements OnInit {
   upMessageReceived(e: any) {
     console.log(JSON.stringify(e, undefined, 2));
   }
-
-
 }

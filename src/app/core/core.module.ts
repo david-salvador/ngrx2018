@@ -51,9 +51,9 @@ import { SignupComponent } from './containers/signup/signup.component';
      */
     !environment.production
       ? StoreDevtoolsModule.instrument({
-        name: 'NgRx 2018 App',
-        logOnly: environment.production
-      })
+          name: 'NgRx 2018 App',
+          logOnly: environment.production
+        })
       : [],
 
     /**
@@ -69,4 +69,4 @@ import { SignupComponent } from './containers/signup/signup.component';
   declarations: [HomePageComponent, SignupComponent, NotFoundPageComponent],
   providers: [{ provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }]
 })
-export class CoreModule { }
+export class CoreModule {}

@@ -2,7 +2,15 @@
 
 <app-toolbar (menuItemClick)="toggleSidenav()">
   ngrx2018 quickStart App
+  <div fxFlex fxLayout fxLayoutAlign="flex-end">
+    <ul fxLayout class="toolbar__navigation-items" fxLayoutGap="0.5rem">
+      <!-- <li><a routerLink="/signup" *ngIf="!(loggedIn$ | async)">Signup</a></li> -->
+      <!-- <li><a routerLink="/">News</a></li> -->
+    </ul>
+
+  </div>
 </app-toolbar>
+
 <mat-sidenav-container (backdropClick)="this.closeSidenav()">
   <mat-sidenav #sidenav [opened]="showSidenav$ | async" disableClose (keydown.escape)="this.closeSidenav()">
 
@@ -16,11 +24,11 @@
         Browse Nodes
       </app-nav-item>
       <app-nav-item (itemClicked)="navItemClicked('signin')" *ngIf="!(loggedIn$ | async)"
-        icon="account_circle" hint="I miss you!">
+        icon="face" hint="I miss you!">
         Sign In
       </app-nav-item>
       <app-nav-item (itemClicked)="navItemClicked('signup')" *ngIf="!(loggedIn$ | async)"
-        icon="account_circle" hint="I miss you!">
+        icon="account_circle" hint="I know you?">
         Sign Up
       </app-nav-item>
       <app-nav-item (itemClicked)="navItemClicked('logout')" *ngIf="loggedIn$ | async">
@@ -31,11 +39,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-
-    <!-- Main
-    <p>router outlet start</p> -->
     <router-outlet></router-outlet>
-    <!-- <p>./router outlet below</p> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
 
